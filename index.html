@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>CHONG ZIXIN | Personal Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Material Symbols -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#eae0de",
+            "primary-fixed": "#ffdad9",
+            "primary-container": "#8c4f4f",
+            "surface-container-low": "#f5f3f1",
+            "secondary-fixed-dim": "#cdc5c2",
+            "on-error": "#ffffff",
+            "outline": "#857372",
+            "on-tertiary-fixed-variant": "#145039",
+            "primary": "#703839",
+            "tertiary-fixed": "#b3f0d0",
+            "surface-container-highest": "#e4e2e0",
+            "primary-fixed-dim": "#ffb3b2",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#30302f",
+            "tertiary": "#17533b",
+            "on-tertiary-fixed": "#002114",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#326b52",
+            "surface": "#fbf9f7",
+            "on-surface": "#1b1c1b",
+            "surface-dim": "#dbdad8",
+            "on-secondary-container": "#696361",
+            "on-primary-fixed": "#380c0e",
+            "tertiary-fixed-dim": "#98d3b5",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e4e2e0",
+            "surface-tint": "#8a4d4d",
+            "outline-variant": "#d7c2c1",
+            "background": "#fbf9f7",
+            "surface-container": "#efedec",
+            "on-secondary-fixed-variant": "#4b4644",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#524343",
+            "on-primary-container": "#ffd0cf",
+            "on-background": "#1b1c1b",
+            "secondary-fixed": "#eae0de",
+            "surface-bright": "#fbf9f7",
+            "on-secondary-fixed": "#1f1b19",
+            "surface-container-high": "#eae8e6",
+            "on-primary-fixed-variant": "#6e3637",
+            "error-container": "#ffdad6",
+            "secondary": "#635d5b",
+            "inverse-primary": "#ffb3b2",
+            "on-tertiary-container": "#ade9ca",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#f2f0ee",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "fontFamily": {
+            "headline": ["Epilogue"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .wine-gradient {
+      background: linear-gradient(135deg, #703839 0%, #8c4f4f 100%);
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+  <!-- Responsive Top Navigation Bar -->
+  <nav class="fixed top-0 w-full z-50 bg-[#fbf9f7]/70 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 md:py-6 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <!-- Mobile Menu Toggle -->
+        <button class="md:hidden flex items-center" id="mobile-menu-btn">
+          <span class="material-symbols-outlined text-primary">menu</span>
+        </button>
+        <div class="flex flex-col">
+          <span class="font-headline text-lg md:text-xl font-black tracking-tighter text-primary">CHONG ZIXIN</span>
+          <span class="font-label text-[8px] uppercase tracking-[0.2em] text-outline-variant font-bold">czix.in</span>
+        </div>
+      </div>
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-10">
+        <a class="font-headline tracking-tight text-xs uppercase font-bold text-on-surface-variant hover:text-primary transition-all duration-300"
+          href="#experience">Portfolio</a>
+        <a class="font-headline tracking-tight text-xs uppercase font-bold text-on-surface-variant hover:text-primary transition-all duration-300"
+          href="#passions">About</a>
+        <a class="font-headline tracking-tight text-xs uppercase font-bold text-on-surface-variant hover:text-primary transition-all duration-300"
+          href="#experience">Experience</a>
+        <a class="font-headline tracking-tight text-xs uppercase font-bold text-on-surface-variant hover:text-primary transition-all duration-300"
+          href="#passions">Passions</a>
+        <a class="font-headline tracking-tight text-xs uppercase font-bold text-primary border-b-2 border-primary pb-1 transition-all duration-300"
+          href="#contact">Contact</a>
+      </div>
+      <button
+        class="wine-gradient text-white px-5 py-2 rounded-md font-headline text-[10px] md:text-xs uppercase font-bold tracking-tight active:scale-95 transition-all duration-200">Get
+        in Touch</button>
+    </div>
+    <!-- Mobile Navigation Drawer (Hidden by default) -->
+    <div class="hidden md:hidden bg-surface-container border-t border-outline-variant px-6 py-8 space-y-6"
+      id="mobile-menu">
+      <a class="block font-headline text-sm font-bold uppercase text-on-surface" href="#experience">Portfolio</a>
+      <a class="block font-headline text-sm font-bold uppercase text-on-surface" href="#passions">About</a>
+      <a class="block font-headline text-sm font-bold uppercase text-on-surface" href="#experience">Experience</a>
+      <a class="block font-headline text-sm font-bold uppercase text-on-surface" href="#passions">Passions</a>
+      <a class="block font-headline text-sm font-bold uppercase text-primary" href="#contact">Contact</a>
+    </div>
+  </nav>
+  <main class="pt-20">
+    <!-- Hero Section: Hybrid Layout -->
+    <section class="min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center px-6 md:px-24 py-12 md:py-24 bg-surface">
+      <div class="max-w-7xl mx-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="order-2 lg:order-1">
+            <span
+              class="font-label text-[10px] md:text-xs tracking-[0.2em] uppercase text-primary font-bold mb-6 block bg-secondary-container inline-block px-3 py-1 rounded-full">STRATEGY
+              &amp; SOUL</span>
+            <h1
+              class="font-headline text-4xl md:text-6xl lg:text-8xl font-black text-on-surface leading-[1.05] tracking-tighter mb-8 md:mb-12">
+              Crafting <span class="text-primary italic">precision</span> products through organic <span
+                class="text-outline">intuition</span>.
+            </h1>
+            <p class="text-on-surface-variant text-lg md:text-2xl max-w-2xl leading-relaxed font-light mb-10">
+              Product Manager, builder and wine lover based in Singapore. I make things that work for people - and
+              occasionally pair them with Gamay.
+            </p>
+            <div class="hidden lg:block">
+              <span
+                class="material-symbols-outlined text-4xl text-primary-container animate-bounce">arrow_downward</span>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div
+              class="w-full aspect-[4/5] md:aspect-square lg:aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden shadow-2xl">
+              <img alt="Professional portrait"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                src="https://lh3.googleusercontent.com/aida/ADBb0ug8K9aHvxKKxiD1L0D4O2HgTfqIjiRf75of1oE2EOwoJw1Kv4bTlhFE4VpmBKsyDXhoLlomd91JLdvTzINEhx46Ai-eRxBCazOXh_G6A8ZHVNRxUtpkgglCOwz9C3HTgTlg-7vypDxiUA__xnknxWXpvt6vyHU55GHHniwq2zG2xP0PmfsIlWewPrjIm6QBirdmi8Z20CQF-KjgrkpNRlhetLSUl4aU86xmX5LGQ9p2dGlmY9OVzxtI1z7oDnIOaC_ug2CCNkdEsvg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Experience Section: Tonal Layering Layout -->
+    <section class="py-20 md:py-32 px-6 md:px-24 bg-surface-container-low" id="experience">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+          <div class="md:col-span-4">
+            <div class="md:sticky md:top-32">
+              <div class="flex items-center gap-4 mb-4 md:mb-6">
+                <h2 class="font-headline text-3xl md:text-4xl font-extrabold tracking-tight text-on-surface">
+                  Professional Lineage</h2>
+              </div>
+              <span class="font-label text-[10px] font-bold tracking-widest text-outline uppercase block mb-4">01 //
+                EXPERIENCE</span>
+              <p class="text-on-surface-variant font-light leading-relaxed">Defining product vision through disciplined
+                execution and empathetic leadership.</p>
+            </div>
+          </div>
+          <div class="md:col-span-8 space-y-8 md:space-y-12">
+            <!-- Experience Card 1 -->
+            <div
+              class="group bg-surface-container-lowest p-8 md:p-10 rounded-xl transition-all duration-500 hover:translate-y-[-4px] shadow-sm border border-outline-variant/10">
+              <div class="flex flex-col sm:flex-row justify-between items-start mb-6 md:mb-8 gap-4">
+                <div>
+                  <h3 class="font-headline text-xl md:text-2xl font-bold text-on-surface">Lead Product Manager</h3>
+                  <p class="font-label text-sm text-primary tracking-wide uppercase font-semibold mt-1">PayPal</p>
+                </div>
+                <span
+                  class="text-outline text-[10px] md:text-xs font-bold bg-surface-container-high px-3 py-1 rounded">2021
+                  — PRESENT</span>
+              </div>
+              <p class="text-on-surface-variant leading-relaxed mb-6 md:mb-8 text-sm md:text-base">Architected Compliance Platform Low Code strategy to support KYC use cases across 200 countries. Managed regulatory compliance for Japan, Brazil and Australia serving >100M customers.</p>
+              <div class="flex flex-wrap gap-2 md:gap-3">
+                <span
+                  class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Compliance</span>
+                <span
+                  class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider">KYC</span>
+              </div>
+            </div>
+            <!-- Experience Card 2 -->
+            <div
+              class="group bg-surface-container-lowest p-8 md:p-10 rounded-xl transition-all duration-500 hover:translate-y-[-4px] shadow-sm border border-outline-variant/10">
+              <div class="flex flex-col sm:flex-row justify-between items-start mb-6 md:mb-8 gap-4">
+                <div>
+                  <h3 class="font-headline text-xl md:text-2xl font-bold text-on-surface">Lead Product Manager</h3>
+                  <p class="font-label text-sm text-primary tracking-wide uppercase font-semibold mt-1">Open Government
+                    Products, GovTech</p>
+                </div>
+                <span
+                  class="text-outline text-[10px] md:text-xs font-bold bg-surface-container-high px-3 py-1 rounded">2019
+                  — 2021</span>
+              </div>
+              <p class="text-on-surface-variant leading-relaxed mb-6 md:mb-8 text-sm md:text-base">Launched and scaled multiple healthcare related products to facilitate enforcement and return-to-normancy during COVID-19.</p>
+              <div class="flex flex-wrap gap-2 md:gap-3">
+                <span
+                  class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider">HealthTech</span>
+                <span
+                  class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Public Good</span>
+              </div>
+            </div>
+            <!-- Experience Card 3 -->
+            <div
+              class="group bg-surface-container-lowest p-8 md:p-10 rounded-xl transition-all duration-500 hover:translate-y-[-4px] shadow-sm border border-outline-variant/10">
+              <div class="flex flex-col sm:flex-row justify-between items-start mb-6 md:mb-8 gap-4">
+                <div>
+                  <h3 class="font-headline text-xl md:text-2xl font-bold text-on-surface">VP Product</h3>
+                  <p class="font-label text-sm text-primary tracking-wide uppercase font-semibold mt-1">Chope</p>
+                </div>
+                <span
+                  class="text-outline text-[10px] md:text-xs font-bold bg-surface-container-high px-3 py-1 rounded">2014
+                  — 2019</span>
+              </div>
+              <p class="text-on-surface-variant leading-relaxed mb-6 md:mb-8 text-sm md:text-base">Joined through M&A. Built Product team (Product Managers, Designers, Data Scientists) from 1 to 20. Scaled restaurant queues, reservation and voucher systems from 2 to 8 cities across 5 countries</p>
+              <div class="flex flex-wrap gap-2 md:gap-3">
+                <span
+                  class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider">FoodTech</span>
+                <span
+                  class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Leadership</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Passions Section: Bento Grid Responsive -->
+    <section class="py-20 md:py-32 px-6 md:px-24 bg-surface" id="passions">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-12 md:mb-20">
+          <div class="flex items-baseline justify-between mb-4">
+            <h2 class="font-headline text-3xl md:text-5xl font-black tracking-tighter">Beyond Product.</h2>
+            <span class="text-[10px] md:text-xs font-bold tracking-widest text-outline uppercase">02 //
+              PERSPECTIVE</span>
+          </div>
+          <span class="font-label text-[10px] tracking-[0.2em] uppercase text-tertiary font-bold block">THE HUMAN
+            ELEMENT</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto">
+          <!-- Bento Item 1: Muay Thai -->
+          <div
+            class="md:col-span-2 group relative overflow-hidden rounded-xl bg-surface-container-high h-[300px] md:h-[400px]">
+            <img
+              class="absolute inset-0 w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-110 opacity-60"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZR4_7aoTcPz8K4JJVRyRTCr0838J1mp5ToAmDU6ibTdGqg0ap6m22G_rImd-DfNFsSsm4HGi0cb0qRpl4in-HRpEgoIjq6JLpQJbLQ27R9hbTMYTA5ChmMIO8GS0gV8kiHjxHhU45a_OcWwuYDWVObpXjNWRZrAFItXmwpuh9o1CkByUFpekFKsMGgeM64xUZ3pwrPDv6HRxoue-LknuALTELWCR2kY3yMJP4jlAP97YbWltV5nbf9z2249Vol0kJUIKklnI6JigX" />
+            <div
+              class="absolute inset-0 p-8 md:p-10 flex flex-col justify-end bg-gradient-to-t from-on-surface/80 to-transparent">
+              <span
+                class="font-label text-[10px] tracking-[0.2em] uppercase text-primary-fixed font-bold mb-2">DISCIPLINE</span>
+              <h3 class="font-headline text-2xl md:text-3xl font-bold text-white mb-2">Muay Thai</h3>
+              <p class="text-white/80 max-w-md text-xs md:text-sm">Balancing my love for food through the art of eight
+                limbs.</p>
+            </div>
+          </div>
+          <!-- Bento Item 2: Reiki -->
+          <div
+            class="md:col-span-1 md:row-span-2 group relative overflow-hidden rounded-xl bg-tertiary-container flex flex-col items-center justify-center p-8 md:p-10 text-center min-h-[350px]">
+            <div class="absolute inset-0 wine-gradient opacity-10"></div>
+            <img
+              class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-1000"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuArvOmHedqwW9j0zL_8HLGqwcO5UDqYWiSShPFzzB_ieGjZ1vhMVwohrPVrfgGrZDw-yF3ZQNU7njThk4w0nJsXu0ZvlEWPaRXYLgAFx0z30bejb3BFlMHi6mw60Tavmgjn0lSPsJ-E6ExmQ2KMHAeyX4x7G5iHcYaPsbVVEEoruFzi6kV9CbruAAJuRsj9uCFltALslLk5uC845xpHbEoufrDzM_sf1hygdJGsgjoodQnUbwWgo_HnxyRYxvZW_BXXpGS2W_MRhepR" />
+            <div class="relative z-10">
+              <span class="material-symbols-outlined text-5xl md:text-6xl text-tertiary-fixed mb-6 block"
+                style="font-variation-settings: 'FILL' 1;">spa</span>
+              <span
+                class="font-label text-[10px] tracking-[0.2em] uppercase text-tertiary-fixed font-bold mb-2 block">RESTORATION</span>
+              <h3 class="font-headline text-2xl md:text-3xl font-bold text-on-tertiary-container mb-4">Reiki Channel
+              </h3>
+              <p class="text-on-tertiary-container/90 text-sm leading-relaxed mb-6">Restorative warmth and energetic
+                intuition for clarity in high-pressure environments.</p>
+              <div class="flex justify-center gap-2">
+                <span
+                  class="bg-tertiary text-on-tertiary text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full">Balance</span>
+                <span
+                  class="bg-tertiary text-on-tertiary text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full">Stillness</span>
+              </div>
+            </div>
+          </div>
+          <!-- Bento Item 3: Eats & Wines -->
+          <div
+            class="md:col-span-2 group relative overflow-hidden rounded-xl bg-surface-container-low h-[300px] md:h-[400px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+              <div class="p-8 md:p-10 flex flex-col justify-center order-2 md:order-1">
+                <span
+                  class="font-label text-[10px] tracking-[0.2em] uppercase text-primary font-bold mb-2">CURATION</span>
+                <h3 class="font-headline text-2xl md:text-3xl font-bold text-on-surface mb-4">Wines</h3>
+                <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed mb-4">Love to discuss wines. Get a
+                  Singaporean sommelier for your wines at <a class="text-primary font-bold hover:underline"
+                    href="https://cellar.zix.in">cellar.zix.in</a>.</p>
+              </div>
+              <div class="relative overflow-hidden order-1 md:order-2">
+                <img
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcqJNBlOwLvhKVT83LZWv5hr8j88KMHrVD5c2FvFUnKCuRmw7w4YQJ-Kwm7nfInLVPyq4WlXG--G3O8sR9rRYCD-OIKhWvKX06fkMVwQAqKtywo7PpDtEgbIkeYWu3PVMAQfko9l-Ufd0axz55nXVcn7FTngjxDjFyLiKdOFrynVEl0WZeUGK01dK6q7VTKf-jppHsfnjS3r0JLPXfrJUd4-oJoGMIOH3Y4c7LG5XUewGnnjuT5At_4CJDENB3hufnVm_IQm20fH-t" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="py-24 md:py-40 px-6 md:px-24 bg-surface-container-high relative overflow-hidden" id="contact">
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <h2 class="font-headline text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter text-on-surface mb-8">
+          Let’s <span class="text-primary underline decoration-primary/30 underline-offset-8">craft</span>.</h2>
+        <p class="text-on-surface-variant text-lg md:text-2xl font-light mb-12 md:mb-16 max-w-2xl mx-auto">Currently
+          open to strategic partnerships, advisory roles, or simply a conversation over a glass of dry red.</p>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
+          <a class="wine-gradient text-white px-8 md:px-12 py-4 md:py-5 rounded-md font-headline text-base md:text-lg font-bold tracking-tight active:scale-95 transition-all duration-200 block w-full md:w-auto"
+            href="mailto:czixin@gmail.com">START THE CONVERSATION</a>
+          <div class="flex gap-8 md:gap-10 pt-4 md:pt-0">
+            <a class="text-on-surface-variant hover:text-primary font-label text-[10px] md:text-xs uppercase tracking-widest transition-colors font-bold"
+              href="https://www.linkedin.com/in/chongzixin/">LinkedIn</a>
+            <a class="text-on-surface-variant hover:text-primary font-label text-[10px] md:text-xs uppercase tracking-widest transition-colors font-bold"
+              href="https://github.com/chongzixin">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <!-- Decorative Element -->
+      <div
+        class="absolute -bottom-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-[80px] md:blur-[120px]">
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="w-full py-12 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 md:px-12 gap-8">
+      <div class="flex flex-col items-center md:items-start">
+        <p class="font-body text-[10px] tracking-widest uppercase text-on-surface-variant font-medium">© 2026
+          CHONG ZIXIN. ALL RIGHTS RESERVED.</p>
+        <p class="font-body text-[8px] tracking-[0.3em] uppercase text-outline-variant font-bold mt-1">czix.in</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Simple mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (menuBtn && menu) {
+      menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+
+      // Close menu on link click
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>
