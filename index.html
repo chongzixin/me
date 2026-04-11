@@ -387,15 +387,18 @@
     const inactiveClasses = ['text-on-surface-variant', 'hover:text-primary'];
 
     function setActiveSection(sectionId) {
+      // First clear all, then activate only the last matching link
+      // (e.g. "Experience" wins over "Portfolio" for the #experience section)
       navLinks.forEach(link => {
-        if (link.dataset.section === sectionId) {
-          inactiveClasses.forEach(c => link.classList.remove(c));
-          activeClasses.forEach(c => link.classList.add(c));
-        } else {
-          activeClasses.forEach(c => link.classList.remove(c));
-          inactiveClasses.forEach(c => link.classList.add(c));
-        }
+        activeClasses.forEach(c => link.classList.remove(c));
+        inactiveClasses.forEach(c => link.classList.add(c));
       });
+      const matches = [...navLinks].filter(link => link.dataset.section === sectionId);
+      if (matches.length > 0) {
+        const target = matches[matches.length - 1];
+        inactiveClasses.forEach(c => target.classList.remove(c));
+        activeClasses.forEach(c => target.classList.add(c));
+      }
     }
 
     function clearActiveSection() {
