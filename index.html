@@ -115,19 +115,19 @@
       <!-- Desktop Nav -->
       <div class="hidden md:flex items-center gap-10">
         <a class="font-headline tracking-tight text-xs uppercase font-bold text-on-surface-variant hover:text-primary transition-all duration-300"
-          href="#experience">Portfolio</a>
+          href="#experience" data-section="experience">Portfolio</a>
         <a class="font-headline tracking-tight text-xs uppercase font-bold text-on-surface-variant hover:text-primary transition-all duration-300"
-          href="#passions">About</a>
+          href="#passions" data-section="passions">About</a>
         <a class="font-headline tracking-tight text-xs uppercase font-bold text-on-surface-variant hover:text-primary transition-all duration-300"
-          href="#experience">Experience</a>
+          href="#experience" data-section="experience">Experience</a>
         <a class="font-headline tracking-tight text-xs uppercase font-bold text-on-surface-variant hover:text-primary transition-all duration-300"
-          href="#passions">Passions</a>
-        <a class="font-headline tracking-tight text-xs uppercase font-bold text-primary border-b-2 border-primary pb-1 transition-all duration-300"
-          href="#contact">Contact</a>
+          href="#passions" data-section="passions">Passions</a>
+        <a class="font-headline tracking-tight text-xs uppercase font-bold text-on-surface-variant hover:text-primary transition-all duration-300"
+          href="#contact" data-section="contact">Contact</a>
       </div>
-      <button
+      <a href="#contact"
         class="wine-gradient text-white px-5 py-2 rounded-md font-headline text-[10px] md:text-xs uppercase font-bold tracking-tight active:scale-95 transition-all duration-200">Get
-        in Touch</button>
+        in Touch</a>
     </div>
     <!-- Mobile Navigation Drawer (Hidden by default) -->
     <div class="hidden md:hidden bg-surface-container border-t border-outline-variant px-6 py-8 space-y-6"
@@ -380,6 +380,49 @@
         });
       });
     }
+
+    // Dynamic active nav underline via IntersectionObserver
+    const navLinks = document.querySelectorAll('[data-section]');
+    const activeClasses = ['text-primary', 'border-b-2', 'border-primary', 'pb-1'];
+    const inactiveClasses = ['text-on-surface-variant', 'hover:text-primary'];
+
+    function setActiveSection(sectionId) {
+      navLinks.forEach(link => {
+        if (link.dataset.section === sectionId) {
+          inactiveClasses.forEach(c => link.classList.remove(c));
+          activeClasses.forEach(c => link.classList.add(c));
+        } else {
+          activeClasses.forEach(c => link.classList.remove(c));
+          inactiveClasses.forEach(c => link.classList.add(c));
+        }
+      });
+    }
+
+    function clearActiveSection() {
+      navLinks.forEach(link => {
+        activeClasses.forEach(c => link.classList.remove(c));
+        inactiveClasses.forEach(c => link.classList.add(c));
+      });
+    }
+
+    const sectionRatios = {};
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        sectionRatios[entry.target.id] = entry.intersectionRatio;
+      });
+
+      const best = Object.entries(sectionRatios).reduce((a, b) => b[1] > a[1] ? b : a, ['', 0]);
+      if (best[1] > 0) {
+        setActiveSection(best[0]);
+      } else {
+        clearActiveSection();
+      }
+    }, { threshold: [0, 0.1, 0.25, 0.5, 0.75, 1.0] });
+
+    ['experience', 'passions', 'contact'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
   </script>
 </body>
 
